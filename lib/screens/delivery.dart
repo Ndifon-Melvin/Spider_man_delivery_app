@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/app_colors.dart';
 import 'package:flutter_application_1/screens/sign_In.dart';
+import 'package:flutter_application_1/widgets/container.dart';
 
 class Delivery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: Padding(
         padding: const EdgeInsets.only(top: 180, left: 20, right: 20),
         child: Column(
@@ -33,24 +35,18 @@ class Delivery extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 25,),
+            SizedBox(height: 30,),
             GestureDetector(
               onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn())),
-              child: Container(
+              child: MyContainer(
                 width: 231,
                 height: 46,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color.fromARGB(255, 214, 21, 7),
-                ),
-                child: Center(
-                  child: Text('Get Started', style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),),
-                ),
-              ),
+                radius: 10,
+                color: AppColors.red,
+                color1: AppColors.white,
+                text: 'Get Started',
+                size: 17,
+              )
             ),
           ],
         ),

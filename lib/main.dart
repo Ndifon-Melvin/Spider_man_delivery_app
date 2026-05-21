@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/onbaording_screens.dart';
 import 'package:flutter_application_1/screens/welcome.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Welcome(),
+      home: OnbaordingScreens(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -14,14 +14,23 @@ class MyContainer extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height?.toDouble(),
-      width: width?.toDouble(),
+      height: height,
+      width: width,
       decoration:BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(radius?.toDouble() ?? 0),
+        boxShadow: [
+          BoxShadow(
+            color: const Color.fromARGB(255, 215, 214, 214).withOpacity(0.5),
+            spreadRadius:0,
+            blurRadius:0,
+            offset: const Offset(0, 4), // changes position of shadow
+          ),
+        ],
+        borderRadius: BorderRadius.circular(radius ?? 0),
         border: Border.all(
           color: const Color.fromARGB(255, 214, 21, 7),
           width: 2,
+          
         )
       ),
       child: Center(

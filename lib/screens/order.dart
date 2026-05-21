@@ -1,32 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/app_colors.dart';
 import 'package:flutter_application_1/screens/delivery.dart';
 
 class Order extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                Text(''),
-                Spacer(),
-                GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Delivery()),
-                  ),
-                  child: Text(
-                    'Skip',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-                  ),
-                ),
-              ],
-            ),
+            
             SizedBox(height: 20,),
             Image(image: AssetImage('assets/images/place_order.png')),
 
