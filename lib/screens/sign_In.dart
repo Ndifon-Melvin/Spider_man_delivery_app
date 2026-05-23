@@ -1,12 +1,53 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_colors.dart';
+import 'package:flutter_application_1/screens/navigation.dart';
 import 'package:flutter_application_1/screens/onbaording_screens.dart';
 import 'package:flutter_application_1/screens/reset_password.dart';
 import 'package:flutter_application_1/screens/sign_Up.dart';
 import 'package:flutter_application_1/widgets/container.dart';
 import 'package:flutter_application_1/widgets/fields.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  bool isloading = false;
+
+  Future<void> _signIn() async {    
+    try {
+      setState(() {
+        isloading = true;
+      });
+      if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
+        // Show an error message if either field is empty
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Please enter both email and password')),
+        );
+        setState(() {
+          isloading = false;
+        });
+        return;
+      }
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+      // Navigate to the next screen or show a success message
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>Navigation()));
+    } on FirebaseAuthException catch (e) {
+      // Handle sign-in errors here
+      print('Error: $e');
+    }
+    setState(() {
+      isloading = false;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,9 +78,10 @@ class SignIn extends StatelessWidget {
               height: 48,
               radius: 10,
               color: AppColors.grey,
-              text: 'Phone Number',
+              text: 'Email',
               size: 16,
-              icon: Icons.phone,
+              icon: Icons.email,
+              controller: _emailController,
             ),
             SizedBox(height: 20,),
 
@@ -51,6 +93,7 @@ class SignIn extends StatelessWidget {
               text: 'Password',
               size: 16,
               icon: Icons.lock,
+              controller: _passwordController,
             ),
               SizedBox(height: 5,),
             Row(
@@ -66,14 +109,23 @@ class SignIn extends StatelessWidget {
               ],
             ),
             SizedBox(height: 50,),
-            MyContainer(
-              width: 379,
-              height: 48,
-              radius: 15,
-              color: AppColors.red,
-              color1: AppColors.white,
-              text: 'Sign In',
-              size: 20,
+            isloading
+              ? CircularProgressIndicator(
+                color: AppColors.red,
+              )
+              : GestureDetector(
+                  onTap: () => _signIn(),
+                  child: MyContainer(
+                    width: 379,
+                    height: 48,
+                    radius: 15,
+                color: AppColors.red,
+                color1: AppColors.white,
+                text: 'Sign In',
+                size: 20,
+                x: 0,
+                y: 4,
+              ),
             ),
               SizedBox(height: 80,),  
             Row(

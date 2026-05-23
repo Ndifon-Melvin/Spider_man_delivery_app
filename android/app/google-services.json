@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "369786801802",
+    "project_id": "spidermandelivery",
+    "storage_bucket": "spidermandelivery.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369786801802:android:4d0a7b81b8db9107432773",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ1u7ESSbMGRnD0AUfTRTGx8r2AqhqkAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

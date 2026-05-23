@@ -62,6 +62,8 @@ class CheckEmail extends StatelessWidget {
               color1: AppColors.white,
               text: 'Reset Password',
               size: 20,
+              x: 0,
+              y: 4,
             ),
           ],
         ),

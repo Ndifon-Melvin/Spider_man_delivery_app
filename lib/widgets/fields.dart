@@ -10,8 +10,9 @@ class Fields extends StatelessWidget{
   final double? size;
   final Color? color1;
   final IconData? icon;
+  final TextEditingController? controller;
 
-  const Fields({super.key, this.width, this.height, this.radius, this.color, this.text ,this.size, this.color1, this.icon});
+  const Fields({super.key, this.width, this.height, this.radius, this.color, this.text ,this.size, this.color1, this.icon, this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,7 @@ class Fields extends StatelessWidget{
             SizedBox(width: 15,),
             Expanded(
               child: TextFormField(
+                controller: controller,
                 decoration: InputDecoration(
                   hintText: text,
                   hintStyle: TextStyle(
