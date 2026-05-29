@@ -3,6 +3,8 @@ import 'package:flutter_application_1/app_colors.dart';
 import 'package:flutter_application_1/screens/calls.dart';
 import 'package:flutter_application_1/screens/history.dart';
 import 'package:flutter_application_1/screens/home.dart';
+import 'package:flutter_application_1/widgets/appbar_text.dart';
+import 'package:flutter_application_1/widgets/drawer_text.dart';
 
 class Navigation extends StatefulWidget {
   @override
@@ -25,6 +27,97 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.white,
+        title: AppBarText(text: 'Dashborad',),
+        centerTitle: true,
+        actions:[
+          Container(
+              margin: EdgeInsets.only(right: 15),
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  width: 2,
+                  color: AppColors.red
+                ),
+                image: DecorationImage(image: AssetImage('assets/images/chucks1.png',), fit: BoxFit.cover)
+              ),
+            )
+        ]
+      ),
+      drawer: Drawer(
+        backgroundColor: AppColors.white,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 80),
+            child: Column(
+              children: [
+                  Row(children: [
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Icon(Icons.close, size: 30, fontWeight: FontWeight.w900,)
+                    ),
+                  SizedBox(width: 60),
+                  Text('Menu', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
+                  ]),
+            
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 40),
+                    padding: EdgeInsets.symmetric(horizontal: 15, ),
+                    width: double.infinity,
+                    height: 110,
+                    decoration: BoxDecoration(
+                      color: AppColors.red,
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Row(children: [
+                      Text('BALANCE', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: AppColors.white),),
+                      Spacer(),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text('10 WEB', style: TextStyle(fontSize: 13,  color: AppColors.white),),
+                          Text('1,000 XAF', style: TextStyle(fontSize: 13, color: AppColors.white),),
+                        ],
+                      )
+                    ],)
+                  ),
+          
+                  DrawerText(
+                    text: 'Send',
+                  ),
+          
+                  DrawerText(
+                    text: 'History',
+                  ),
+          
+                  DrawerText(
+                    text: 'Call',
+                  ),
+          
+                  DrawerText(
+                    text: 'Save Places',
+                  ),
+          
+                  DrawerText(
+                    text: 'Settings',
+                  ),
+          
+                  DrawerText(
+                    text: 'Info',
+                  ),
+          
+                  DrawerText(
+                    text: 'Logout',
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ),
       body: PageView(
         controller: _pageController,
         children: screens,
@@ -105,7 +198,7 @@ class _NavigationState extends State<Navigation> {
                           : AppColors.black,
                     ),
                     Text(
-                      'Calls',
+                      'Chats',
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
