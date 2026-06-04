@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_colors.dart';
-import 'package:flutter_application_1/screens/calls.dart';
+import 'package:flutter_application_1/screens/chats.dart';
 import 'package:flutter_application_1/screens/history.dart';
 import 'package:flutter_application_1/screens/home.dart';
 import 'package:flutter_application_1/widgets/appbar_text.dart';
@@ -15,7 +15,7 @@ class _NavigationState extends State<Navigation> {
   int currentIndex = 0;
   final PageController _pageController = PageController();
 
-  final List<Widget> screens = [Home(), History(), Calls()];
+  final List<Widget> screens = [Home(), History(), Chats()];
 
   void changeTab(int index) {
     setState(() {
@@ -42,7 +42,7 @@ class _NavigationState extends State<Navigation> {
                   width: 2,
                   color: AppColors.red
                 ),
-                image: DecorationImage(image: AssetImage('assets/images/chucks1.png',), fit: BoxFit.cover)
+                image: DecorationImage(image: AssetImage('assets/images/face.png',), fit: BoxFit.cover)
               ),
             )
         ]
@@ -192,7 +192,7 @@ class _NavigationState extends State<Navigation> {
                   children: [
                     IconButton(
                       onPressed: () => changeTab(2),
-                      icon: Icon(Icons.phone),
+                      icon: Icon(Icons.message),
                       color: currentIndex == 2
                           ? AppColors.red
                           : AppColors.black,
