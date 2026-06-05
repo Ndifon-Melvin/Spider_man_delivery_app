@@ -7,6 +7,7 @@ import 'package:flutter_application_1/widgets/appbar_text.dart';
 import 'package:flutter_application_1/widgets/drawer_text.dart';
 
 class Navigation extends StatefulWidget {
+  
   @override
   State<Navigation> createState() => _NavigationState();
 }
