@@ -3,6 +3,8 @@ import 'package:flutter_application_1/app_colors.dart';
 import 'package:flutter_application_1/screens/chats.dart';
 import 'package:flutter_application_1/screens/history.dart';
 import 'package:flutter_application_1/screens/home.dart';
+import 'package:flutter_application_1/screens/profile.dart';
+import 'package:flutter_application_1/screens/save_places.dart';
 import 'package:flutter_application_1/widgets/appbar_text.dart';
 import 'package:flutter_application_1/widgets/drawer_text.dart';
 
@@ -96,19 +98,25 @@ class _NavigationState extends State<Navigation> {
                   ),
           
                   DrawerText(
-                    text: 'Call',
+                    text: 'Chats',
                   ),
           
-                  DrawerText(
-                    text: 'Save Places',
+                  GestureDetector(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>SavePlaces())),
+                    child: DrawerText(
+                      text: 'Save Places',
+                    ),
                   ),
           
                   DrawerText(
                     text: 'Settings',
                   ),
           
-                  DrawerText(
-                    text: 'Info',
+                  GestureDetector(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile())),
+                    child: DrawerText(
+                      text: 'Info',
+                    ),
                   ),
           
                   DrawerText(
