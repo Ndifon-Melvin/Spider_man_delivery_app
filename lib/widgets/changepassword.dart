@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_colors.dart';
 
-class Fields extends StatelessWidget {
+class PasswordWidget extends StatelessWidget {
   final double? width;
   final double? height;
   final double? radius;
@@ -12,7 +12,7 @@ class Fields extends StatelessWidget {
   final IconData? icon;
   final TextEditingController? controller;
 
-  const Fields({
+  const PasswordWidget({
     super.key,
     this.width,
     this.height,
@@ -48,8 +48,6 @@ class Fields extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(icon),
-            SizedBox(width: 15),
             Expanded(
               child: TextFormField(
                 controller: controller,

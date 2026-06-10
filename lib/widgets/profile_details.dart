@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_colors.dart';
 
-class ProfileWidget extends StatelessWidget {
-  final IconData? icon;
+class ProfileDetailWidget extends StatelessWidget {
   final String? text;
 
-  const ProfileWidget({super.key, this.icon, this.text});
+  const ProfileDetailWidget({super.key, this.text});
 
   Widget build(BuildContext context) {
     return Container(
@@ -27,8 +26,6 @@ class ProfileWidget extends StatelessWidget {
       child: Row(
         
         children: [
-          Icon(icon, color: AppColors.red),
-          SizedBox(width: 20,),
           Text(text ?? '', style: TextStyle(fontSize: 15)),
         ],
       ),

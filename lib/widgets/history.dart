@@ -29,7 +29,7 @@ class HistoryWidget extends StatelessWidget {
           BoxShadow(
             color: const Color.fromARGB(255, 196, 195, 195).withOpacity(0.5),
             spreadRadius: 0,
-            blurRadius: 0,
+            blurRadius: 1,
             offset: const Offset(0, 4), // changes position of shadow
           ),
         ],

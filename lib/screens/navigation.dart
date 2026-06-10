@@ -5,6 +5,7 @@ import 'package:flutter_application_1/screens/history.dart';
 import 'package:flutter_application_1/screens/home.dart';
 import 'package:flutter_application_1/screens/profile.dart';
 import 'package:flutter_application_1/screens/save_places.dart';
+import 'package:flutter_application_1/screens/settings.dart';
 import 'package:flutter_application_1/widgets/appbar_text.dart';
 import 'package:flutter_application_1/widgets/drawer_text.dart';
 
@@ -108,8 +109,11 @@ class _NavigationState extends State<Navigation> {
                     ),
                   ),
           
-                  DrawerText(
-                    text: 'Settings',
+                  GestureDetector(
+                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>Settings())),
+                    child: DrawerText(
+                      text: 'Settings',
+                    ),
                   ),
           
                   GestureDetector(

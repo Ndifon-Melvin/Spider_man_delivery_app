@@ -28,7 +28,7 @@ class MyContainer extends StatelessWidget{
             BoxShadow(
               color: const Color.fromARGB(255, 215, 214, 214).withOpacity(0.5),
               spreadRadius:0,
-              blurRadius:0,
+              blurRadius:1,
               offset:  Offset(x ?? 0, y ?? 0), // changes position of shadow
             ),
           ],
