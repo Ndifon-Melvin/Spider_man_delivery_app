@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/app_colors.dart';
+import 'package:flutter_application_1/screens/pick_up_location.dart';
 import 'package:flutter_application_1/widgets/home_container.dart';
 
 class Home extends StatelessWidget {
@@ -71,10 +72,13 @@ class Home extends StatelessWidget {
                           ),
               
                           Spacer(),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            size: 25,
-                            color: AppColors.red,
+                          GestureDetector(
+                            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>PickUpLocation())),
+                            child: Icon(
+                              Icons.arrow_forward_ios,
+                              size: 25,
+                              color: AppColors.red,
+                            ),
                           ),
                         ],
                       ),

@@ -46,7 +46,7 @@ class PasswordWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               child: TextFormField(
@@ -56,7 +56,7 @@ class PasswordWidget extends StatelessWidget {
                   hintStyle: TextStyle(
                     fontSize: size,
                     color: color1,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w400,
                   ),
                   border: InputBorder.none,
                 ),
